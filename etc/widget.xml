@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Techfactory, Inc. All rights reserved.
+ * See LICENSE for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget class="Techfactory\Recommendations\Block\Widget\RecommendProducts" id="techfactory_recommendations_recommended_products">
+		<label>Techfactory: Recommended Products</label>
+		<description></description>
+		<parameters>
+			<parameter name="title" visible="true" xsi:type="text">
+				<label>Title</label>
+			</parameter>
+			<parameter name="categories" xsi:type="block" visible="true">
+				<label translate="true">Filter By Category</label>
+				<block class="Techfactory\Recommendations\Block\Adminhtml\Category\Chooser" />
+			</parameter>
+			<parameter name="filter_by_attributes" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				<label translate="true">Filter By Attributes</label>
+				<description translate="true">Filtering by attributes will only have an effect if the widget is placed on a product detail page</description>
+			 </parameter>
+			 <parameter name="show_pager" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				 <label translate="true">Display Page Control</label>
+			 </parameter>
+			 <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+				 <label translate="true">Number of Products per Page</label>
+				 <depends>
+					 <parameter name="show_pager" value="1" />
+				 </depends>
+				 <value>5</value>
+			 </parameter>
+			<parameter name="products_count" xsi:type="text" required="true" visible="true">
+				<label translate="true">Number of products to display</label>
+				<value>5</value>
+			</parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+				<label translate="true">Template</label>
+				<options>
+					<option name="default" value="Magento_CatalogWidget::product/widget/content/grid.phtml" selected="true">
+						<label translate="true">Products Grid Template</label>
+					</option>
+				</options>
+			</parameter>
+			<parameter name="cache_lifetime" xsi:type="text" visible="true">
+				 <label translate="true">Cache Lifetime (Seconds)</label>
+				 <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+			 </parameter>
+			 <parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="10"
+						class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+				 <label translate="true">Conditions</label>
+			 </parameter>
+		</parameters>
+	</widget>
+
+	<widget class="Techfactory\Recommendations\Block\Widget\SimilarProducts" id="techfactory_recommendations_similar_products">
+		<label>Techfactory: Similar Products</label>
+		<description>Only use this widget on a product detail page</description>
+		<parameters>
+			<parameter name="title" visible="true" xsi:type="text">
+				<label>Title</label>
+			</parameter>
+			<parameter name="filter_by_attributes" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				<label translate="true">Filter By Attributes</label>
+				<description translate="true">Filtering by attributes will only have an effect if the widget is placed on a product detail page</description>
+			 </parameter>
+			 <parameter name="show_pager" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				 <label translate="true">Display Page Control</label>
+			 </parameter>
+			 <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+				 <label translate="true">Number of Products per Page</label>
+				 <depends>
+					 <parameter name="show_pager" value="1" />
+				 </depends>
+				 <value>5</value>
+			 </parameter>
+			<parameter name="products_count" xsi:type="text" required="true" visible="true">
+				<label translate="true">Number of products to display</label>
+				<value>5</value>
+			</parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+				<label translate="true">Template</label>
+				<options>
+					<option name="default" value="Magento_CatalogWidget::product/widget/content/grid.phtml" selected="true">
+						<label translate="true">Products Grid Template</label>
+					</option>
+				</options>
+			</parameter>
+			<parameter name="cache_lifetime" xsi:type="text" visible="true">
+				 <label translate="true">Cache Lifetime (Seconds)</label>
+				 <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+			 </parameter>
+			 <parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="10"
+						class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+				 <label translate="true">Conditions</label>
+			 </parameter>
+		</parameters>
+	</widget>
+
+	<widget class="Techfactory\Recommendations\Block\Widget\PopularProducts" id="techfactory_recommendations_popular_products">
+		<label>Techfactory: Popular Products</label>
+		<description></description>
+		<parameters>
+			<parameter name="title" visible="true" xsi:type="text">
+				<label>Title</label>
+			</parameter>
+			<parameter name="categories" xsi:type="block" visible="true">
+				<label translate="true">Filter By Category</label>
+				<block class="Techfactory\Recommendations\Block\Adminhtml\Category\Chooser" />
+			</parameter>
+			<parameter name="filter_by_attributes" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				<label translate="true">Filter By Attributes</label>
+				<description translate="true">Filtering by attributes will only have an effect if the widget is placed on a product detail page</description>
+			 </parameter>
+			 <parameter name="show_pager" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				 <label translate="true">Display Page Control</label>
+			 </parameter>
+			 <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+				 <label translate="true">Number of Products per Page</label>
+				 <depends>
+					 <parameter name="show_pager" value="1" />
+				 </depends>
+				 <value>5</value>
+			 </parameter>
+			<parameter name="products_count" xsi:type="text" required="true" visible="true">
+				<label translate="true">Number of products to display</label>
+				<value>5</value>
+			</parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+				<label translate="true">Template</label>
+				<options>
+					<option name="default" value="Magento_CatalogWidget::product/widget/content/grid.phtml" selected="true">
+						<label translate="true">Products Grid Template</label>
+					</option>
+				</options>
+			</parameter>
+			<parameter name="cache_lifetime" xsi:type="text" visible="true">
+				 <label translate="true">Cache Lifetime (Seconds)</label>
+				 <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+			 </parameter>
+			 <parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="10"
+						class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+				 <label translate="true">Conditions</label>
+			 </parameter>
+		</parameters>
+	</widget>
+
+	<widget class="Techfactory\Recommendations\Block\Widget\TrendProducts" id="techfactory_recommendations_trend_products">
+		<label>Techfactory: Trending Products</label>
+		<description></description>
+		<parameters>
+			<parameter name="title" visible="true" xsi:type="text">
+				<label>Title</label>
+			</parameter>
+			<parameter name="categories" xsi:type="block" visible="true">
+				<label translate="true">Filter By Category</label>
+				<block class="Techfactory\Recommendations\Block\Adminhtml\Category\Chooser" />
+			</parameter>
+			<parameter name="filter_by_attributes" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				<label translate="true">Filter By Attributes</label>
+				<description translate="true">Filtering by attributes will only have an effect if the widget is placed on a product detail page</description>
+			 </parameter>
+			 <parameter name="show_pager" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				 <label translate="true">Display Page Control</label>
+			 </parameter>
+			 <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+				 <label translate="true">Number of Products per Page</label>
+				 <depends>
+					 <parameter name="show_pager" value="1" />
+				 </depends>
+				 <value>5</value>
+			 </parameter>
+			<parameter name="products_count" xsi:type="text" required="true" visible="true">
+				<label translate="true">Number of products to display</label>
+				<value>5</value>
+			</parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+				<label translate="true">Template</label>
+				<options>
+					<option name="default" value="Magento_CatalogWidget::product/widget/content/grid.phtml" selected="true">
+						<label translate="true">Products Grid Template</label>
+					</option>
+				</options>
+			</parameter>
+			<parameter name="cache_lifetime" xsi:type="text" visible="true">
+				 <label translate="true">Cache Lifetime (Seconds)</label>
+				 <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+			 </parameter>
+			 <parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="10"
+						class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+				 <label translate="true">Conditions</label>
+			 </parameter>
+		</parameters>
+	</widget>
+</widgets>

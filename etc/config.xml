@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Techfactory, Inc. All rights reserved.
+ * See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<account_settings>
+			<general>
+				<service_address/>
+			</general>
+		</account_settings>
+		<recommendations>
+			<product_attributes>
+				<note>When using a recommendation widget specifically on a product details page, it can optionally filter the type of recommendations displayed to match up to 3 attributes of the currently displayed product. This setting is optional.</note>
+				<attribute_tag_1/>
+				<attribute_tag_2/>
+				<attribute_tag_3/>
+			</product_attributes>
+		</recommendations>
+	</default>
+</config>

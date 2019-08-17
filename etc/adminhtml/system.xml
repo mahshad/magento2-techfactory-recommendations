@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Techfactory, Inc. All rights reserved.
+ * See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="Techfactory_Recommendations" sortOrder="777" translate="label">
+			<label>Techfactory Recommendations</label>
+		</tab>
+		<section id="account_settings" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Account Settings</label>
+			<tab>Techfactory_Recommendations</tab>
+			<resource>Techfactory_Recommendations::config</resource>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+				<label>Account Settings</label>
+				<field id="service_address" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Service Address</label>
+					<validate>required-entry</validate>
+					<comment>For example: http://example.techfactory.ai (Note: Don't add / at the end of url)</comment>
+				</field>
+			</group>
+		</section>
+		<section id="recommendations" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="11" translate="label">
+			<label>Recommendations</label>
+			<tab>Techfactory_Recommendations</tab>
+			<resource>Techfactory_Recommendations::config</resource>
+			<group id="product_attributes" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+				<label>Product Attributes</label>
+				<field id="note" type="label" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+					<label>Note:</label>
+				</field>
+				<field id="attribute_tag_1" type="select" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+                    <label>Attribute Tag #1</label>
+                    <source_model>Techfactory\Recommendations\Model\AttributeTags</source_model>
+                </field>
+                <field id="attribute_tag_2" type="select" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+                    <label>Attribute Tag #2</label>
+                    <source_model>Techfactory\Recommendations\Model\AttributeTags</source_model>
+                </field>
+                <field id="attribute_tag_3" type="select" showInDefault="1" showInStore="1" showInWebsite="1" translate="label">
+                    <label>Attribute Tag #3</label>
+                    <source_model>Techfactory\Recommendations\Model\AttributeTags</source_model>
+                </field>
+			</group>
+		</section>
+	</system>
+</config>
